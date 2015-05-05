@@ -1,0 +1,16 @@
+class Ale < Formula
+  url "https://github.com/sc932/ALE.git"
+  version "0.8.0"
+  homepage "http://sc932.github.io/ALE/"
+
+  
+  # depends_on "cmake" => :build
+  depends_on :python
+  depends_on :PyMix
+
+  def install
+    system "./configure", "--prefix=#{prefix}", "--disable-debug", "--disable-dependency-tracking"
+#   system "cmake", ".", *std_cmake_args
+    system "make", "install"
+  end
+end
